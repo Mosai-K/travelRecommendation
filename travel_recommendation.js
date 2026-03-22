@@ -11,7 +11,7 @@ let cachedData = null;
 async function loadData() {
     if (!cachedData) {
         try {
-            const response = await fetch('travel_recommendation_api.json');
+            const response = await fetch('data.json');
           
             cachedData = await response.json();
             console.log('Data fetched successfully:', cachedData);
@@ -38,6 +38,7 @@ function createCard(item) {
 async function searchDestinations() {
     const inputElement = document.getElementById('conditionInput');
     const data = await loadData();
+    console.log('Search initiated with query:', inputElement.value);
     if (!inputElement) {
         console.error('Input element with id "conditionInput" not found.');
         return;
@@ -45,7 +46,7 @@ async function searchDestinations() {
 
     const input = inputElement.value;
     const query = input.trim().toLowerCase();
-   
+   console.log('Processed search query:', query);
     if (!query) {
         console.log('Empty search query. Showing intro.');
         resultDiv.innerHTML = '';
@@ -61,7 +62,7 @@ async function searchDestinations() {
     }
 
     let results = [];
-
+    console.log('Starting search through data categories...');
     for (const category in data) {
         const items = data[category];
         console.log(`Checking category: ${category} with ${items.length} items`);
@@ -116,3 +117,9 @@ function toggleSearchResults(show) {
 }
 
 btnSearch.addEventListener('click', searchDestinations);
+
+btnClear.addEventListener('click', () => {
+    toggleSearchResults(false);
+    if (websiteIntro) websiteIntro.style.display = 'block';
+    resultDiv.innerHTML = '';
+});

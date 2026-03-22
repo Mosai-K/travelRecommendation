@@ -15,7 +15,7 @@
     </head>
 
     <body>
-       <nav class="navbar bg-dark sticky-top" data-bs-theme="dark">
+        <nav class="navbar bg-dark sticky-top" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="./assets/travel-logo-design.jpg" alt="Logo" width="35" height="30"
@@ -28,18 +28,18 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link "  href="about-us.html">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
+                            <a class="nav-link"  href="contact_us.html">Contact Us</a>
                         </li>
                     </ul>
                 </div>
                 <form class="d-flex" role="search">
                     <div class="input-group" style="width: 400px;"></div>
                         <input class="form-control" id="conditionInput" type="search" placeholder="Enter a destination or a keyword" aria-label="Search"/>
-                        <button class="btn btn-outline-secondary" type="button" onclick="this.previousElementSibling.value=''">Clear</button>
-                        <button class="btn btn-outline-success" id="btnSearch" type="submit">Search</button>
+                        <button class="btn btn-outline-secondary" id="btnClear" type="button" onclick="this.previousElementSibling.value=''">Clear</button>
+                        <button class="btn btn-outline-success" id="btnSearch" type="button">Search</button>
                     </div>
                 </form>
             </div>
@@ -73,7 +73,8 @@
             <button class="btn btn-success"><strong>Book Now</strong></button>
             </section>
         </div>
-
+        
         <script src="travel_recommendation.js"></script>
     </body>
+    
 </html>
