@@ -1,3 +1,3 @@
-# SWIFT TRAVEL
+# SWIFT TRAVEL - Back to Basics
 
-https://mosai-k.github.io/travelRecommendation/travel_recommendation.html
+https://mosai-k.github.io/travel-recommendation/travel_recommendation.html
